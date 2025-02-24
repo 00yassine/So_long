@@ -6,7 +6,7 @@
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:56:56 by yassine           #+#    #+#             */
-/*   Updated: 2025/02/23 18:02:20 by ykabili-         ###   ########.fr       */
+/*   Updated: 2025/02/24 10:01:25 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int	main(int ac, char **av)
 	{
 		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
-			ft_error("The map cannot be open.\n");
-		extention_checker(av[1]);
+			ft_error("⚠️​The map cannot be open.⚠️​\n");
+		ft_ex_checker(av[1]);
 		map = reading_map(fd);
 		checking_map(map);
 		path_checker(map, 0);
 		path_checker(map, 1);
 	}
 	else
-		ft_error("too many argument or invalid input");
+		ft_error("⚠️​too many argument or invalid input⚠️​");
 }
