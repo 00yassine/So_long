@@ -29,5 +29,5 @@ int	main(int ac, char **av)
 		path_checker(map, 1);
 	}
 	else
-		ft_error("⚠️​too many argument or invalid input⚠️​");
+		ft_error("⚠️​too many argument or invalid input⚠️\n​");
 }

@@ -21,12 +21,12 @@ void	ft_ex_checker(char *str)
 	exten = ".ber";
 	i = ft_strlen(str);
 	if (i <= 4)
-		ft_error("⚠️​Error⚠️​ : invalid map file, please try another file");
+		ft_error("⚠️​Error⚠️​ : invalid map file, please try another file\n");
 	j = i - 4;
 	i = 0;
 	while (str[j] && exten[i])
 		if (str[j++] != exten[i++])
-			ft_error("⚠️​Error⚠️​ : invalid map file extention");
+			ft_error("⚠️​Error⚠️​ : invalid map file extention\n");
 	j = 0;
 	dot = 0;
 	while (str[j++])
@@ -35,5 +35,5 @@ void	ft_ex_checker(char *str)
 			dot++;
 	}
 	if (dot > 1)
-		ft_error("⚠️​too many \".\" in the file name⚠️​");
+		ft_error("⚠️​too many \".\" in the file name⚠️\n​");
 }

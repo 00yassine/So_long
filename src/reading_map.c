@@ -20,7 +20,7 @@ static void	ft_newline_checker(char *str)
 	if (str[0] == '\n')
 	{
 		free(str);
-		ft_error("⚠️too many newline⚠️");
+		ft_error("⚠️too many newline⚠️\n");
 	}
 	while (str[i])
 	{
@@ -29,7 +29,7 @@ static void	ft_newline_checker(char *str)
 			if (str[i + 1] == '\n')
 			{
 				free(str);
-				ft_error("⚠️too many newline⚠️");
+				ft_error("⚠️too many newline⚠️\n");
 			}
 		}
 		i++;
@@ -71,7 +71,7 @@ char	**reading_map(int fd)
 	if (ft_strlen(file_content) == 0)
 	{
 		free(file_content);
-		put_error("⚠️empty map file.⚠️");
+		put_error("⚠️empty map file.⚠️\n");
 	}
 	ft_newline_checker(file_content);
 	map = ft_split(file_content, '\n');

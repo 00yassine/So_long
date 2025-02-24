@@ -49,7 +49,7 @@ static static void	check_hori_walls(char **map)
 		if (map[0][i] != '1')
 		{
 			ft_free(map);
-			ft_error("⚠️invalid wall⚠️");
+			ft_error("⚠️invalid wall⚠️\n");
 		}
 		i++;
 	}
@@ -67,7 +67,7 @@ static void	check_verti_walls(char **map)
 		if (map[i][0] != '1' || map[i][j] != '1')
 		{
 			ft_free(map);
-			ft_error("⚠️invalid wall⚠️");
+			ft_error("⚠️invalid wall⚠️\n");
 		}
 		i++;
 	}
@@ -77,7 +77,7 @@ static void	check_verti_walls(char **map)
 		if (map[i][j] != '1')
 		{
 			ft_free(map);
-			ft_error("⚠️invalid wall⚠️");
+			ft_error("⚠️invalid wall⚠️\n");
 		}
 		j--;
 	}
@@ -93,7 +93,7 @@ void	checking_map(char **map)
 		if (ft_strlen(map[i]) != ft_strlen(map[0]))
 		{
 			ft_free(map);
-			ft_error("⚠️too many newline⚠️");
+			ft_error("⚠️too many newline⚠️\n");
 		}
 		i++;
 	}
