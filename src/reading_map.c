@@ -6,13 +6,13 @@
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:02:20 by ykabili-          #+#    #+#             */
-/*   Updated: 2025/02/24 11:23:43 by ykabili-         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:06:20 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_newline_checker(char *str)
+static void	ft_newline_checker(char *str)
 {
 	int	i;
 
@@ -22,9 +22,21 @@ void	ft_newline_checker(char *str)
 		free(str);
 		ft_error("⚠️too many newline⚠️");
 	}
+	while (str[i])
+	{
+		if (str[i] == '\n')
+		{
+			if (str[i + 1] == '\n')
+			{
+				free(str);
+				ft_error("⚠️too many newline⚠️");
+			}
+		}
+		i++;
+	}
 }
 
-char	*ft_getmap(int fd)
+static char	*ft_getmap(int fd)
 {
 	char	*buffer;
 	char	*line;

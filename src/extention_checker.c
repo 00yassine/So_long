@@ -6,7 +6,7 @@
 /*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 09:34:44 by ykabili-          #+#    #+#             */
-/*   Updated: 2025/02/24 10:01:49 by ykabili-         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:05:18 by ykabili-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_ex_checker(char *str)
 	i = 0;
 	while (str[j] && exten[i])
 		if (str[j++] != exten[i++])
-			put_error("⚠️​Error⚠️​ : invalid map file extention");
+			ft_error("⚠️​Error⚠️​ : invalid map file extention");
 	j = 0;
 	dot = 0;
 	while (str[j++])
@@ -35,5 +35,5 @@ void	ft_ex_checker(char *str)
 			dot++;
 	}
 	if (dot > 1)
-		put_error("⚠️​too many \".\" in the file name⚠️​");
+		ft_error("⚠️​too many \".\" in the file name⚠️​");
 }
