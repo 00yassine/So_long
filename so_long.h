@@ -17,11 +17,9 @@
 # include <string.h>
 # include <stddef.h>
 # include <ctype.h>
-# include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "mlx.h"
 # include "libft/libft.h"
 
 typedef struct a_data
@@ -33,7 +31,7 @@ typedef struct a_data
 	int	exit;
 	int	nb_lines;
 	int	line_len;
-}
+} t_data;
 
 int		main(int ac, char **av);
 void	ft_error(char *str);

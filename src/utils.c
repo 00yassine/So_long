@@ -64,19 +64,19 @@ void	ft_alloc_map(t_data *data, char **map)
 	i = 0;
 	while (map && map[i])
 		i++;
-	data->heapptr_map = malloc((i + 1) * sizeof(char *));
-	if (!data->heapptr_map)
+	data->map_ptr = malloc((i + 1) * sizeof(char *));
+	if (!data->map_ptr)
 		return ;
 	i = 0;
 	while (map && map[i])
 	{
-		data->heapptr_map[i] = ft_strdup(map[i]);
+		data->map_ptr[i] = ft_strdup(map[i]);
 		i++;
 	}
-	data->heapptr_map[i] = NULL;
+	data->map_ptr[i] = NULL;
 }
 
-void	checking_path(t_data, data->x_cor, data->y_cor, n)
+void	checking_path(t_data *data, int x_cor, int y_cor, int n)
 {
 
 }
