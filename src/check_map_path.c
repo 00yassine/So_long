@@ -31,7 +31,10 @@ int	path_checker(char **map, int n)
 	data->nb_lines = i;
 	checking_path(data, data->x_cor, data->y_cor, n);
 	if ((n == 1 && data->exit == 0) || (n == 0 && data->coins == 0))
-		return (free_data(data), 0);
+	{
+		free_data(data);
+		return (0);
+	}
 	free_data(data);
 	ft_free(map);
 	ft_error("⚠️​The Path is not valid.⚠️\n​");
