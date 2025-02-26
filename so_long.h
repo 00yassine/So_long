@@ -31,7 +31,7 @@ typedef struct a_data
 	int	exit;
 	int	nb_lines;
 	int	line_len;
-} t_data;
+}	t_data;
 
 int		main(int ac, char **av);
 void	ft_error(char *str);
@@ -42,7 +42,7 @@ void	ft_free(char **s);
 int		path_checker(char **map, int n);
 void	ft_save_p_cor(t_data *data, char **map);
 void	ft_alloc_map(t_data *data, char **map);
-void	checking_path(t_data, data->x_cor, data->y_cor, n);
+void	checking_path(t_data *data, int x_cor, int y_cor, int n);
 void	free_data(t_data *data);
 
 #endif
