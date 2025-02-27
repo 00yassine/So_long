@@ -26,6 +26,6 @@ static void	ft_putstr_fd(char *s, int fd)
 
 void	ft_error(char *str)
 {
-	ft_putstr(str, 2);
-	exit();
+	ft_putstr_fd(str, 2);
+	exit(1);
 }

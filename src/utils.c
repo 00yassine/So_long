@@ -76,7 +76,44 @@ void	ft_alloc_map(t_data *data, char **map)
 	data->map_ptr[i] = NULL;
 }
 
+int	check_next_move(t_data *data, int y, int x, int n)
+{
+	if (n == 0)
+	{
+		if (data->map_ptr[y][x] == '1' || data->map_ptr[y][x] == 'E')
+			return (0);
+		else if (data->map_ptr[y][x] == 'C')
+		{
+			data->map_ptr[y][x] = '0';
+			data->coins--;
+		}
+	}
+	else if (n == 1)
+	{
+		if (data->map_ptr[y][x] == '1')
+			return (0);
+		if (data->map_ptr[y][x] == 'E')
+		{
+			data->map_ptr[y][x] = '0';
+			data->exit = 0;
+		}
+	}
+	return (1);
+}
+
 void	checking_path(t_data *data, int x_cor, int y_cor, int n)
 {
-
+	if (y_cor > data->nb_lines || x_cor > data->line_len)
+		return ;
+	if (y_cor < 0 || x_cor < 0)
+		return ;
+	data->map_ptr[y_cor][x_cor] = '1';
+	if (check_next_move(data, y_cor, x_cor + 1, n) != 0)
+		checking_path(data, y_cor, x_cor + 1, n);
+	if (check_next_move(data, y_cor, x_cor - 1, n) != 0)
+		checking_path(data, y_cor, x_cor - 1, n);
+	if (check_next_move(data, y_cor + 1, x_cor, n) != 0)
+		checking_path(data, y_cor + 1, x_cor, n);
+	if (check_next_move(data, y_cor - 1, x_cor, n) != 0)
+		checking_path(data, y_cor - 1, x_cor, n);
 }

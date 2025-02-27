@@ -71,7 +71,7 @@ char	**reading_map(int fd)
 	if (ft_strlen(file_content) == 0)
 	{
 		free(file_content);
-		put_error("⚠️empty map file.⚠️\n");
+		ft_error("⚠️empty map file.⚠️\n");
 	}
 	ft_newline_checker(file_content);
 	map = ft_split(file_content, '\n');

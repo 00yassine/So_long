@@ -39,7 +39,7 @@ static int	check_map_chars(char **map, char c)
 	return (count);
 }
 
-static static void	check_hori_walls(char **map)
+static void	check_hori_walls(char **map)
 {
 	int	i;
 
@@ -102,11 +102,11 @@ void	checking_map(char **map)
 	if (check_map_chars(map, 'C') < 1 || check_map_chars(map, 'P') != 1)
 	{
 		ft_free(map);
-		put_error("⚠️characters Error : fix ur map.⚠️\n");
+		ft_error("⚠️characters Error : fix ur map.⚠️\n");
 	}
 	if (check_map_chars(map, 'E') != 1)
 	{
 		ft_free(map);
-		put_error("⚠️characters Error : fix ur map.⚠️\n");
+		ft_error("⚠️characters Error : fix ur map.⚠️\n");
 	}
 }

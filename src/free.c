@@ -32,7 +32,7 @@ void	free_data(t_data *data)
 	i = 0;
 	while (data->map_ptr[i])
 	{
-		free (data->map_ptr[i])
+		free (data->map_ptr[i]);
 		i++;
 	}
 	free (data->map_ptr);
