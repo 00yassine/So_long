@@ -93,7 +93,7 @@ void	checking_map(char **map)
 		if (ft_strlen(map[i]) != ft_strlen(map[0]))
 		{
 			ft_free(map);
-			ft_error("⚠️too many newline⚠️\n");
+			ft_error("⚠️the map is not rectangular⚠️\n");
 		}
 		i++;
 	}
@@ -107,6 +107,6 @@ void	checking_map(char **map)
 	if (check_map_chars(map, 'E') != 1)
 	{
 		ft_free(map);
-		ft_error("⚠️characters Error : fix ur map.⚠️\n");
+		ft_error("⚠️NO EXIT IN THE MAP : fix ur map.⚠️\n");
 	}
 }
