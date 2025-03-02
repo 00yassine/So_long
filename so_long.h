@@ -21,6 +21,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "libft/libft.h"
+# include <mlx.h>
 
 typedef struct a_data
 {
@@ -33,6 +34,24 @@ typedef struct a_data
 	int		line_len;
 }	t_data;
 
+typedef struct s_game
+{
+	void	*mlx;
+	void	*mlx_win;
+	void	*img;
+	int		x;
+	int		y;
+	int		nb_m;
+	int		coins;
+	char	**map_ptr;
+	void	*img1;
+	void	*img2;
+	void	*img3;
+	void	*img4;
+	void	*img5;
+
+}	t_game;
+
 int		main(int ac, char **av);
 void	ft_error(char *str);
 void	ft_ex_checker(char *str);
@@ -40,11 +59,17 @@ char	**reading_map(int fd);
 void	checking_map(char **map);
 void	ft_free(char **s);
 int		path_checker(char **map, int n);
-void	ft_save_p_cor(t_data *data, char **map);
-void	ft_alloc_map(t_data *data, char **map);
+void	ft_save_p_cor_data(t_data *data, char **map);
+void	ft_save_p_cor_game(t_game *game, char **map);
+void	ft_alloc_map_data(t_data *data, char **map);
+void	ft_alloc_map_game(t_game *game, char **map);
 void	checking_path(t_data *data, int x_cor, int y_cor, int n);
 int		ft_coins_number(char **map);
 void	free_data(t_data *data);
 int		check_next_move(t_data *data, int y, int x, int n);
-
+void    begin_game(char **map);
+void    set_img_to_window(t_game *game, char **map, int x, int y);
+void    set_image(t_game *game);
+void	save_position(t_game *game, char **map);
+void	ft_alloc_map_game(t_game *game, char **map);
 #endif

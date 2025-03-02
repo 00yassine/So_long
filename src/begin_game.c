@@ -54,6 +54,56 @@ void	save_position(t_game *game, char **map)
 	}
 }
 
+void    set_image(t_game *game)
+{
+    int x;
+    int y;
+
+    game->img1 = mlx_xpm_file_to_image (game->mlx,
+			"./textures/wall.xpm", &x, &y);
+	check_xpm(game->img1, game);
+	game->img2 = mlx_xpm_file_to_image (game->mlx,
+			"./textures/rows.xpm", &x, &y);
+	check_xpm(game->img2, game);
+	game->img3 = mlx_xpm_file_to_image (game->mlx,
+			"./textures/player.xpm", &x, &y);
+	check_xpm(game->img3, game);
+	game->img4 = mlx_xpm_file_to_image (game->mlx,
+			"./textures/collectif.xpm", &x, &y);
+	check_xpm(game->img4, game);
+	game->img5 = mlx_xpm_file_to_image (game->mlx,
+			"./textures/exit.xpm", &x, &y);
+	check_xpm(game->img5, game);
+}
+
+void    set_img_to_window(t_game *game, char **map, int x, int y)
+{
+    while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == '1')
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img1,
+					x * 50, y * 50);
+			if (map[y][x] == '0')
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img2,
+					x * 50, y * 50);
+			if (map[y][x] == 'P')
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img3,
+					x * 50, y * 50);
+			if (map[y][x] == 'C')
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img4,
+					x * 50, y * 50);
+			if (map[y][x] == 'E')
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img5,
+					x * 50, y * 50);
+			x++;
+		}
+		y++;
+	}
+}
+
 void    begin_game(char **map)
 {
     t_game  game;
@@ -69,8 +119,8 @@ void    begin_game(char **map)
         i++;
     i = ft_strlen(map[0]);
     game.mlx_win = mlx_new_window(game.mlx, i * 64, j * 64, "SO_LONG");
-    path_image(&game);
-    put_to_window(&game, map, 0, 0);
+    set_image(&game);
+    set_img_to_window(&game, map, 0, 0);
     ft_free(map);
     mlx_hook(game.mlx_win, 17, 0, func_hook, &game);
     mlx_key_hook(game.mlx_win, keyhook, &game);

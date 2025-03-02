@@ -22,8 +22,8 @@ int	path_checker(char **map, int n)
 		return (0);
 	data->coins = ft_coins_number(map);
 	data->exit = 1;
-	ft_save_p_cor(data, map);
-	ft_alloc_map(data, map);
+	ft_save_p_cor_data(data, map);
+	ft_alloc_map_data(data, map);
 	data->line_len = ft_strlen(map[0]);
 	i = 0;
 	while (map[i] != NULL)
