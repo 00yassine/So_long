@@ -27,6 +27,8 @@ int	main(int ac, char **av)
 		checking_map(map);
 		path_checker(map, 0);
 		path_checker(map, 1);
+		begin_game(map);
+		ft_free(map);
 	}
 	else
 		ft_error("⚠️​too many argument or invalid input⚠️\n​");

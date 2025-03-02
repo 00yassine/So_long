@@ -34,7 +34,7 @@ int	ft_coins_number(char **map)
 	return (count);
 }
 
-void	ft_save_p_cor(t_data *data, char **map)
+void	ft_save_p_cor_data(t_data *data, char **map)
 {
 	int	i;
 	int	j;
@@ -57,7 +57,7 @@ void	ft_save_p_cor(t_data *data, char **map)
 	}
 }
 
-void	ft_alloc_map(t_data *data, char **map)
+void	ft_alloc_map_data(t_data *data, char **map)
 {
 	int		i;
 
