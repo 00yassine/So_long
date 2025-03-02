@@ -22,6 +22,7 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 # include <mlx.h>
+# include "minilibx-linux/mlx.h"
 
 typedef struct a_data
 {
@@ -72,4 +73,13 @@ void    set_img_to_window(t_game *game, char **map, int x, int y);
 void    set_image(t_game *game);
 void	save_position(t_game *game, char **map);
 void	ft_alloc_map_game(t_game *game, char **map);
+void	check_xpm(void *s, t_game *game);
+void	free_data_map(t_data *data, char **map);
+int 	func_hook(t_game *game);
+void	destroy_game(t_game *game);
+int		keyhook(int keycode, t_game *game);
+int		collec_check(t_game *game);
+void	print_move(t_game *game);
+void	func_move(int keycode, int x, int y, t_game *game);
+
 #endif
