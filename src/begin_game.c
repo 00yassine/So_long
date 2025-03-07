@@ -85,19 +85,19 @@ void	set_img_to_window(t_game *game, char **map, int x, int y)
 		{
 			if (map[y][x] == '1')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img1,
-					x * 50, y * 50);
+					x * 64, y * 64);
 			if (map[y][x] == '0')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img2,
-					x * 50, y * 50);
+					x * 64, y * 64);
 			if (map[y][x] == 'P')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img3,
-					x * 50, y * 50);
+					x * 64, y * 64);
 			if (map[y][x] == 'C')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img4,
-					x * 50, y * 50);
+					x * 64, y * 64);
 			if (map[y][x] == 'E')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img5,
-					x * 50, y * 50);
+					x * 64, y * 64);
 			x++;
 		}
 		y++;
@@ -118,7 +118,7 @@ void	begin_game(char **map)
 	while (map && map[j])
 		j++;
 	i = ft_strlen(map[0]);
-	game.mlx_win = mlx_new_window(game.mlx, i * 50, j * 50, "SO_LONG");
+	game.mlx_win = mlx_new_window(game.mlx, i * 64, j * 64, "SO_LONG");
 	set_image(&game);
 	set_img_to_window(&game, map, 0, 0);
 	ft_free(map);
