@@ -71,7 +71,7 @@ void	print_move(t_game *game)
 
 	num_str = ft_itoa(game->nb_m);
 	full_str = ft_strjoin(" ----| MOVE NUMBER |----> ", num_str);
-	mlx_string_put(game->mlx, game->mlx_win, 30, 30, 0xFFFF00, full_str);
+	mlx_string_put(game->mlx, game->mlx_win, 30, 30, 0xD0D0D0, full_str);
 	ft_putstr(full_str);
 	write(1, "\n", 1);
 	free(num_str);
