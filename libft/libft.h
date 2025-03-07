@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+
 typedef struct split
 {
 	int		word_c;

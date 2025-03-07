@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fit.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ykabili- <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 18:54:08 by ykabili-          #+#    #+#             */
-/*   Updated: 2025/03/01 18:54:11 by ykabili-         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   fit.c											  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: ykabili- <marvin@42.fr>					+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2025/03/01 18:54:08 by ykabili-		  #+#	#+#			 */
+/*   Updated: 2025/03/01 18:54:11 by ykabili-		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "../so_long.h"
@@ -34,16 +34,16 @@ void	check_xpm(void *s, t_game *game)
 
 void	free_data_map(t_data *data, char **map)
 {
-		free_data(data);
-	    ft_free(map);
-		ft_error("Error: Map large than your screen\n");
+	free_data(data);
+	ft_free(map);
+	ft_error("Error: Map large than your screen\n");
 }
 
-int func_hook(t_game *game)
+int	func_hook(t_game *game)
 {
-    destroy_game(game);
-    exit (1);
-    return (0);
+	destroy_game(game);
+	exit (1);
+	return (0);
 }
 
 void	destroy_game(t_game *game)

@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ykabili- <ykabili-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 15:57:47 by yassine           #+#    #+#             */
-/*   Updated: 2025/02/24 16:51:26 by ykabili-         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   so_long.h										  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: ykabili- <ykabili-@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2025/02/23 15:57:47 by yassine		   #+#	#+#			 */
+/*   Updated: 2025/02/24 16:51:26 by ykabili-		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
@@ -67,14 +67,14 @@ void	checking_path(t_data *data, int x_cor, int y_cor, int n);
 int		ft_coins_number(char **map);
 void	free_data(t_data *data);
 int		check_next_move(t_data *data, int y, int x, int n);
-void    begin_game(char **map);
-void    set_img_to_window(t_game *game, char **map, int x, int y);
-void    set_image(t_game *game);
+void	begin_game(char **map);
+void	set_img_to_window(t_game *game, char **map, int x, int y);
+void	set_image(t_game *game);
 void	save_position(t_game *game, char **map);
 void	ft_alloc_map_game(t_game *game, char **map);
 void	check_xpm(void *s, t_game *game);
 void	free_data_map(t_data *data, char **map);
-int 	func_hook(t_game *game);
+int		func_hook(t_game *game);
 void	destroy_game(t_game *game);
 int		keyhook(int keycode, t_game *game);
 int		collec_check(t_game *game);

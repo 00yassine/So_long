@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   begin_game.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ykabili- <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/02 12:03:37 by ykabili-          #+#    #+#             */
-/*   Updated: 2025/03/02 12:03:45 by ykabili-         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   begin_game.c									   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: ykabili- <marvin@42.fr>					+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2025/03/02 12:03:37 by ykabili-		  #+#	#+#			 */
+/*   Updated: 2025/03/02 12:03:45 by ykabili-		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "../so_long.h"
@@ -54,12 +54,12 @@ void	save_position(t_game *game, char **map)
 	}
 }
 
-void    set_image(t_game *game)
+void	set_image(t_game *game)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    game->img1 = mlx_xpm_file_to_image (game->mlx,
+	game->img1 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/stone.xpm", &x, &y);
 	check_xpm(game->img1, game);
 	game->img2 = mlx_xpm_file_to_image (game->mlx,
@@ -76,9 +76,9 @@ void    set_image(t_game *game)
 	check_xpm(game->img5, game);
 }
 
-void    set_img_to_window(t_game *game, char **map, int x, int y)
+void	set_img_to_window(t_game *game, char **map, int x, int y)
 {
-    while (map[y])
+	while (map[y])
 	{
 		x = 0;
 		while (map[y][x])
@@ -104,25 +104,25 @@ void    set_img_to_window(t_game *game, char **map, int x, int y)
 	}
 }
 
-void    begin_game(char **map)
+void	begin_game(char **map)
 {
-    t_game  game;
-    int i;
-    int j;
+	t_game	game;
+	int		i;
+	int		j;
 
-    j = 0;
-    ft_alloc_map_game(&game, map);
-    ft_save_p_cor_game(&game, map);
-    game.mlx = mlx_init();
+	j = 0;
+	ft_alloc_map_game(&game, map);
+	ft_save_p_cor_game(&game, map);
+	game.mlx = mlx_init();
 	game.nb_m = 0;
-    while (map && map[j])
-        j++;
-    i = ft_strlen(map[0]);
-    game.mlx_win = mlx_new_window(game.mlx, i * 50, j * 50, "SO_LONG");
-    set_image(&game);
-    set_img_to_window(&game, map, 0, 0);
-    ft_free(map);
-    mlx_hook(game.mlx_win, 17, 0, func_hook, &game);
-    mlx_key_hook(game.mlx_win, keyhook, &game);
-    mlx_loop(game.mlx);
+	while (map && map[j])
+		j++;
+	i = ft_strlen(map[0]);
+	game.mlx_win = mlx_new_window(game.mlx, i * 50, j * 50, "SO_LONG");
+	set_image(&game);
+	set_img_to_window(&game, map, 0, 0);
+	ft_free(map);
+	mlx_hook(game.mlx_win, 17, 0, func_hook, &game);
+	mlx_key_hook(game.mlx_win, keyhook, &game);
+	mlx_loop(game.mlx);
 }

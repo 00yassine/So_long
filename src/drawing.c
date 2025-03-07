@@ -102,7 +102,7 @@ void	func_move(int keycode, int x, int y, t_game *game)
 	}
 	else if (game->map_ptr[y][x] == 'E' && game->coins == 0)
 	{
-		ft_putstr("\n\n                                    |||  🎊​>> You Win ! <<🎊​ |||\n");
+		ft_putstr("\n\n      |||  🎊​>> You Win ! <<🎊​ |||\n");
 		destroy_game(game);
 	}
 }
