@@ -21,7 +21,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "libft/libft.h"
-# include <mlx.h>
 # include "minilibx-linux/mlx.h"
 
 typedef struct a_data

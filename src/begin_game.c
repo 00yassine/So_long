@@ -60,16 +60,16 @@ void    set_image(t_game *game)
     int y;
 
     game->img1 = mlx_xpm_file_to_image (game->mlx,
-			"./textures/wall.xpm", &x, &y);
+			"./textures/stone.xpm", &x, &y);
 	check_xpm(game->img1, game);
 	game->img2 = mlx_xpm_file_to_image (game->mlx,
-			"./textures/rows.xpm", &x, &y);
+			"./textures/sand.xpm", &x, &y);
 	check_xpm(game->img2, game);
 	game->img3 = mlx_xpm_file_to_image (game->mlx,
-			"./textures/player.xpm", &x, &y);
+			"./textures/steve.xpm", &x, &y);
 	check_xpm(game->img3, game);
 	game->img4 = mlx_xpm_file_to_image (game->mlx,
-			"./textures/collectif.xpm", &x, &y);
+			"./textures/diamond.xpm", &x, &y);
 	check_xpm(game->img4, game);
 	game->img5 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/exit.xpm", &x, &y);
@@ -85,19 +85,19 @@ void    set_img_to_window(t_game *game, char **map, int x, int y)
 		{
 			if (map[y][x] == '1')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img1,
-					x * 64, y * 64);
+					x * 50, y * 50);
 			if (map[y][x] == '0')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img2,
-					x * 64, y * 64);
+					x * 50, y * 50);
 			if (map[y][x] == 'P')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img3,
-					x * 64, y * 64);
+					x * 50, y * 50);
 			if (map[y][x] == 'C')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img4,
-					x * 64, y * 64);
+					x * 50, y * 50);
 			if (map[y][x] == 'E')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img5,
-					x * 64, y * 64);
+					x * 50, y * 50);
 			x++;
 		}
 		y++;
@@ -114,12 +114,13 @@ void    begin_game(char **map)
     ft_alloc_map_game(&game, map);
     ft_save_p_cor_game(&game, map);
     game.mlx = mlx_init();
-    game.nb_m = 0;
-    while (map && map[0])
+	game.nb_m = 0;
+    while (map && map[j])
         j++;
     i = ft_strlen(map[0]);
-    game.mlx_win = mlx_new_window(game.mlx, i * 64, j * 64, "SO_LONG");
+    game.mlx_win = mlx_new_window(game.mlx, i * 50, j * 50, "SO_LONG");
     set_image(&game);
+	printf("here\n\n\n\n");
     set_img_to_window(&game, map, 0, 0);
     ft_free(map);
     mlx_hook(game.mlx_win, 17, 0, func_hook, &game);

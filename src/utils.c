@@ -101,7 +101,7 @@ int	check_next_move(t_data *data, int y, int x, int n)
 	return (1);
 }
 
-void	checking_path(t_data *data, int x_cor, int y_cor, int n)
+void	checking_path(t_data *data, int y_cor, int x_cor, int n)
 {
 	if (y_cor > data->nb_lines || x_cor > data->line_len)
 		return ;
