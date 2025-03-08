@@ -83,11 +83,25 @@ static void	check_verti_walls(char **map)
 	}
 }
 
+static void	check_existance(char **map)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = ft_strlen(map[0]);
+	while(map[j])
+		j++;
+	if(i < 3 || j < 3)
+		ft_error("there is no map");
+}
+
 void	checking_map(char **map)
 {
 	int	i;
 
 	i = 1;
+	check_existance(map);
 	while (map[i])
 	{
 		if (ft_strlen(map[i]) != ft_strlen(map[0]))

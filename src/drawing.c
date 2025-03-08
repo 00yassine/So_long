@@ -69,6 +69,7 @@ void	print_move(t_game *game)
 	char	*num_str;
 	char	*full_str;
 
+	game->nb_m++;
 	num_str = ft_itoa(game->nb_m);
 	full_str = ft_strjoin(" ----| MOVE NUMBER |----> ", num_str);
 	mlx_string_put(game->mlx, game->mlx_win, 30, 30, 0xD0D0D0, full_str);
@@ -96,12 +97,12 @@ void	func_move(int keycode, int x, int y, t_game *game)
 		game->map_ptr[y][x] = 'P';
 		game->x = x;
 		game->y = y;
-		game->nb_m++;
 		set_img_to_window(game, game->map_ptr, 0, 0);
 		print_move(game);
 	}
 	else if (game->map_ptr[y][x] == 'E' && game->coins == 0)
 	{
+		print_move(game);
 		ft_putstr("\n\n      |||  🎊​>> You Win ! <<🎊​ |||\n");
 		destroy_game(game);
 	}
