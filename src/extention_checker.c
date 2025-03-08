@@ -14,7 +14,7 @@
 
 static void	check_map_slash(char *str)
 {
-	int	i;
+	int		i;
 	char	*path;
 
 	path = "maps/";
@@ -22,7 +22,7 @@ static void	check_map_slash(char *str)
 	while (str[i] != path[i])
 	{
 		if (str[i] != path[i])
-			ft_error("error:map/ is not found");
+			ft_error("error:maps/ is not found");
 		i++;
 	}
 }
