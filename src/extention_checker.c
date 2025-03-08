@@ -12,15 +12,31 @@
 
 #include "../so_long.h"
 
+static void	check_map_slash(char *str)
+{
+	int	i;
+	char	*path;
+
+	path = "maps/";
+	i = 0;
+	while (str[i] != path[i])
+	{
+		if (str[i] != path[i])
+			ft_error("error:map/ is not found");
+		i++;
+	}
+}
+
 void	ft_ex_checker(char *str)
 {
 	size_t	i;
 	char	*exten;
 
 	int (j), (dot);
+	check_map_slash(str);
 	exten = ".ber";
 	i = ft_strlen(str);
-	if (i <= 4)
+	if (i - 5 <= 4)
 		ft_error("⚠️​Error⚠️​ : invalid map file, please try another file\n");
 	j = i - 4;
 	i = 0;
