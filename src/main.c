@@ -21,7 +21,7 @@ static void	check_long(char **map)
 	j = 0;
 	while(map[j])
 		j++;
-	if(i > 72 || j > 33)
+	if(i > 59 || j > 33)
 	{
 		ft_free(map);
 		ft_error("map too big\n");
