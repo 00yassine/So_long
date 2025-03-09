@@ -90,9 +90,9 @@ static void	check_existance(char **map)
 
 	j = 0;
 	i = ft_strlen(map[0]);
-	while(map[j])
+	while (map[j])
 		j++;
-	if(i < 3 || j < 3)
+	if (i < 3 || j < 3)
 	{
 		ft_free(map);
 		ft_error("Error\n:⚠️there is no map⚠️\n");

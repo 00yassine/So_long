@@ -120,7 +120,7 @@ void	begin_game(char **map)
 		j++;
 	i = ft_strlen(map[0]);
 	game.mlx_win = mlx_new_window(game.mlx, i * 64, j * 64, "SO_LONG");
-	set_image(&game,map);
+	set_image(&game, map);
 	set_img_to_window(&game, map, 0, 0);
 	ft_free(map);
 	mlx_hook(game.mlx_win, 17, 0, func_hook, &game);
