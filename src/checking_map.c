@@ -93,7 +93,10 @@ static void	check_existance(char **map)
 	while(map[j])
 		j++;
 	if(i < 3 || j < 3)
+	{
+		ft_free(map);
 		ft_error("there is no map");
+	}
 }
 
 void	checking_map(char **map)

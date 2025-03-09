@@ -50,7 +50,7 @@ static char	*ft_getmap(int fd)
 	i = 1;
 	while (i > 0)
 	{
-		i = read (fd, buffer, (int)5);
+		i = read (fd, buffer, 1);
 		if (i <= 0)
 			break ;
 		buffer[i] = '\0';
