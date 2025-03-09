@@ -34,6 +34,6 @@ int	path_checker(char **map, int n)
 		return (free_data(data), 0);
 	free_data(data);
 	ft_free(map);
-	ft_error("⚠️​The Path is not valid.⚠️\n​");
+	ft_error("Error\n:⚠️​The Path is not valid.⚠️\n​");
 	return (0);
 }

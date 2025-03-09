@@ -22,7 +22,7 @@ static void	check_map_slash(char *str)
 	while (str[i] != path[i])
 	{
 		if (str[i] != path[i])
-			ft_error("error:maps/ is not found");
+			ft_error("Error\n:⚠️maps/ is not found⚠️.\n");
 		i++;
 	}
 }
@@ -37,12 +37,12 @@ void	ft_ex_checker(char *str)
 	exten = ".ber";
 	i = ft_strlen(str);
 	if (i - 5 <= 4)
-		ft_error("⚠️​Error⚠️​ : invalid map file, please try another file\n");
+		ft_error("Error\n:⚠️​invalid map file, please try another file⚠️.\n");
 	j = i - 4;
 	i = 0;
 	while (str[j] && exten[i])
 		if (str[j++] != exten[i++])
-			ft_error("⚠️​Error⚠️​ : invalid map file extention\n");
+			ft_error("Error\n:⚠️ invalid map file extention⚠️.\n");
 	j = 0;
 	dot = 0;
 	while (str[j++])
@@ -51,5 +51,5 @@ void	ft_ex_checker(char *str)
 			dot++;
 	}
 	if (dot > 1)
-		ft_error("⚠️​too many \".\" in the file name⚠️\n​");
+		ft_error("Error\n:⚠️​too many \".\" in the file name⚠️.\n​");
 }

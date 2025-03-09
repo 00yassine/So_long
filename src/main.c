@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	{
 		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
-			ft_error("⚠️​The map cannot be open.⚠️​\n");
+			ft_error("Error\n:⚠️​The map cannot be open⚠️.​\n");
 		ft_ex_checker(av[1]);
 		map = reading_map(fd);
 		checking_map(map);
@@ -31,5 +31,5 @@ int	main(int ac, char **av)
 		ft_free(map);
 	}
 	else
-		ft_error("⚠️​too many argument or invalid input⚠️\n​");
+		ft_error("Error\n:⚠️​too many argument or invalid input⚠️.\n​");
 }

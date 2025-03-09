@@ -26,7 +26,7 @@ void	check_xpm(void *s, t_game *game)
 			mlx_destroy_image(game->mlx, game->img4);
 		if (game->img5)
 			mlx_destroy_image(game->mlx, game->img5);
-		ft_error("cannot open file xpm try again !!\n");
+		ft_error("Error\n:⚠️cannot open file xpm try again⚠️ !!\n");
 	}
 }
 
@@ -34,7 +34,7 @@ void	free_data_map(t_data *data, char **map)
 {
 	free_data(data);
 	ft_free(map);
-	ft_error("Error: Map large than your screen\n");
+	ft_error("Error\n: ⚠️Map large than your screen⚠️.\n");
 }
 
 int	func_hook(t_game *game)
