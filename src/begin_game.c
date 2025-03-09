@@ -54,7 +54,7 @@ void	save_position(t_game *game, char **map)
 	}
 }
 
-void	set_image(t_game *game)
+void	set_image(t_game *game, char **map)
 {
 	int	x;
 	int	y;
@@ -71,8 +71,9 @@ void	set_image(t_game *game)
 			"./textures/exit.xpm", &x, &y);
 	if (!game->img1 || !game->img2 || !game->img3 || !game->img4 || !game->img5)
 	{
+		ft_free(map);
+		ft_putstr_fd("cannot open the textures\n", 2);
 		destroy_game(game);
-		ft_error("cannot open the textures\n");
 	}
 }
 
@@ -119,7 +120,7 @@ void	begin_game(char **map)
 		j++;
 	i = ft_strlen(map[0]);
 	game.mlx_win = mlx_new_window(game.mlx, i * 64, j * 64, "SO_LONG");
-	set_image(&game);
+	set_image(&game,map);
 	set_img_to_window(&game, map, 0, 0);
 	ft_free(map);
 	mlx_hook(game.mlx_win, 17, 0, func_hook, &game);
