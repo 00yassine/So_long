@@ -12,21 +12,6 @@
 
 #include "../so_long.h"
 
-static void	check_long(char **map)
-{
-	int	i;
-	int	j;
-
-	i = ft_strlen(map[0]);
-	j = 0;
-	while(map[j])
-		j++;
-	if(i > 59 || j > 33)
-	{
-		ft_free(map);
-		ft_error("map too big\n");
-	}
-}
 int	main(int ac, char **av)
 {
 	char	**map;
@@ -39,7 +24,6 @@ int	main(int ac, char **av)
 			ft_error("⚠️​The map cannot be open.⚠️​\n");
 		ft_ex_checker(av[1]);
 		map = reading_map(fd);
-		check_long(map);
 		checking_map(map);
 		path_checker(map, 0);
 		path_checker(map, 1);
