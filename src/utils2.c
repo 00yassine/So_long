@@ -25,9 +25,7 @@ void	check_xpm(void *s, t_game *game)
 		if (game->img4)
 			mlx_destroy_image(game->mlx, game->img4);
 		if (game->img5)
-		{
 			mlx_destroy_image(game->mlx, game->img5);
-		}
 		ft_error("cannot open file xpm try again !!\n");
 	}
 }

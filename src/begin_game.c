@@ -61,19 +61,19 @@ void	set_image(t_game *game)
 
 	game->img1 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/stone.xpm", &x, &y);
-	check_xpm(game->img1, game);
 	game->img2 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/sand.xpm", &x, &y);
-	check_xpm(game->img2, game);
 	game->img3 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/steve.xpm", &x, &y);
-	check_xpm(game->img3, game);
 	game->img4 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/diamond.xpm", &x, &y);
-	check_xpm(game->img4, game);
 	game->img5 = mlx_xpm_file_to_image (game->mlx,
 			"./textures/exit.xpm", &x, &y);
-	check_xpm(game->img5, game);
+	if (!game->img1 || !game->img2 || !game->img3 || !game->img4 || !game->img5)
+	{
+		destroy_game(game);
+		ft_error("cannot open the textures\n");
+	}
 }
 
 void	set_img_to_window(t_game *game, char **map, int x, int y)

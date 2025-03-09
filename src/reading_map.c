@@ -68,7 +68,7 @@ char	**reading_map(int fd)
 	char	*file_content;
 
 	file_content = ft_getmap(fd);
-	if (ft_strlen(file_content) == 0)
+	if (file_content == NULL)
 	{
 		free(file_content);
 		ft_error("⚠️empty map file.⚠️\n");
