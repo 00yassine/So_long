@@ -12,44 +12,19 @@
 
 #include "../so_long.h"
 
-static void	check_map_slash(char *str)
+static int	check_map_name(char *str)
 {
-	int		i;
-	char	*path;
-
-	path = "maps/";
-	i = 0;
-	while (str[i] != path[i])
-	{
-		if (str[i] != path[i])
-			ft_error("Error\n:⚠️maps/ is not found⚠️.\n");
+	int (i) = 0;
+	while (str[i])
 		i++;
-	}
+	if (str[i - 1] == 'r' && str[i - 2] == 'e'
+		&& str[i - 3] == 'b' && str[i - 4] == '.')
+		return (1);
+	return (0);
 }
 
 void	ft_ex_checker(char *str)
 {
-	size_t	i;
-	char	*exten;
-
-	int (j), (dot);
-	check_map_slash(str);
-	exten = ".ber";
-	i = ft_strlen(str);
-	if (i - 5 <= 4)
+	if (!check_map_name(str))
 		ft_error("Error\n:⚠️​invalid map file, please try another file⚠️.\n");
-	j = i - 4;
-	i = 0;
-	while (str[j] && exten[i])
-		if (str[j++] != exten[i++])
-			ft_error("Error\n:⚠️ invalid map file extention⚠️.\n");
-	j = 0;
-	dot = 0;
-	while (str[j++])
-	{
-		if (str[j] == '.')
-			dot++;
-	}
-	if (dot > 1)
-		ft_error("Error\n:⚠️​too many \".\" in the file name⚠️.\n​");
 }
