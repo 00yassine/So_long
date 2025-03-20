@@ -13,12 +13,6 @@ bonus : all
 $(NAME): $(objf)
 	cc $(CFLAGS) $(objf) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
-src/%.o: src/%.c $(HEADER)
-	cc $(CFLAGS) -c $< -o $@
-
-libft/%.o: libft/%.c $(HEADER)
-	cc $(CFLAGS) -c $< -o $@
-
 clean:
 	rm -rf $(objf)
 
@@ -26,3 +20,5 @@ fclean:clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.SECONDARY : ${objf}
